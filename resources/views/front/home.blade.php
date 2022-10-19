@@ -340,7 +340,7 @@
 												@else
 												<tr class="track_form_tr">
                                                     <td class="track_form_td" colspan="2">
-                                                        <h4>Ex: 12345</h4>
+                                                        <h5 style="color: red; font-size:16px;">Please input a Correct Tracking Code to Get order Details</h5>
                                                     </td>
                                                 </tr>
 												@endif 

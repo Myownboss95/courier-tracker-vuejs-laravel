@@ -128,7 +128,7 @@ class OrderController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Order $order)
-    {
+    { 
         $valid = $request->validate([
             // 'name' => ['required', 'string', Rule::unique('bots')->ignore($order)],
             // 'description' => ['required', 'string'],

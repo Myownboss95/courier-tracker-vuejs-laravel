@@ -16,7 +16,15 @@
             v-model="form.order_name"
             class="col-md-6 col-sm-12" 
           />
-          <FormSelect
+          <!-- <FormSelect
+            name="order_status"
+            placeholder="Order Status"
+            label="Order Status"
+            v-model="form.order_status"
+            class="col-md-6 col-sm-12" 
+            :options="{ '':'Select Options', 'delivered': 'Delivered', 'in_transit': 'In Transit', 'pending':'Pending', 'not_collected': 'Not Collected' }"
+          /> -->
+          <FormSelectOption
             name="order_status"
             placeholder="Order Status"
             label="Order Status"
@@ -129,6 +137,7 @@
             label="Origin"
             v-model="form.origin"
           />
+          
           <FormGroup
             class="col-md-6 col-sm-12" 
             name="carrier_ref_no"
@@ -219,6 +228,7 @@
   import FormGroup from '@/views/components/form/FormGroup.vue';
   import { computed } from "@vue/runtime-core";
   import FormSelect from '@/views/components/form/FormSelect.vue';
+  import FormSelectOption from '@/views/components/form/FormSelectOption.vue';
   import FormButton from '@/views/components/form/FormButton.vue';
   import ButtonLoader from '@/views/components/form/ButtonLoader.vue';
   import { useForm } from '@inertiajs/inertia-vue3';
@@ -262,6 +272,7 @@ const props = defineProps({
 
   const countries = computed(() => props.countries);
   const updateOrder = (_) => {
+    // console.log(form.data())
     form.put(route('admin.orders.update',props.order?.id));
   };
 </script>
