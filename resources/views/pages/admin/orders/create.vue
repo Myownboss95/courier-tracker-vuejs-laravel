@@ -16,7 +16,7 @@
             v-model="form.order_name"
             class="col-md-6 col-sm-12" 
           />
-          <FormSelect
+          <FormSelectOption
             name="order_status"
             placeholder="Order Status"
             label="Order Status"
@@ -219,6 +219,7 @@
   import breadcrumb from '@/views/components/layout/breadcrumb.vue';
   import FormGroup from '@/views/components/form/FormGroup.vue';
   import FormSelect from '@/views/components/form/FormSelect.vue';
+  import FormSelectOption from '@/views/components/form/FormSelect.vue';
   import FormButton from '@/views/components/form/FormButton.vue';
   import ButtonLoader from '@/views/components/form/ButtonLoader.vue';
   import { useForm } from '@inertiajs/inertia-vue3';
