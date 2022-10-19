@@ -219,7 +219,7 @@
   import breadcrumb from '@/views/components/layout/breadcrumb.vue';
   import FormGroup from '@/views/components/form/FormGroup.vue';
   import FormSelect from '@/views/components/form/FormSelect.vue';
-  import FormSelectOption from '@/views/components/form/FormSelect.vue';
+  import FormSelectOption from '@/views/components/form/FormSelectOption.vue';
   import FormButton from '@/views/components/form/FormButton.vue';
   import ButtonLoader from '@/views/components/form/ButtonLoader.vue';
   import { useForm } from '@inertiajs/inertia-vue3';
