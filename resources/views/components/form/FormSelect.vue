@@ -7,6 +7,7 @@
     <Error :name="name" v-if="name" />
 
 </div>
+
 </template>
 
 <script setup>
