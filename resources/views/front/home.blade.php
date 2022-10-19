@@ -394,12 +394,12 @@
                                                                 <div class="fl-photo fl-photo-align-left" itemscope
                                                                     itemtype="http://schema.org/ImageObject">
                                                                     <div class="fl-photo-content fl-photo-img-jpeg">
-                                                                        <a href="https://morz.vamtam.com/"
+                                                                        <a href="https://zgffreightservices.com/"
                                                                             target="_self" itemprop="url"
                                                                             title="ZGF logistics 02">
                                                                             <img loading="lazy"
                                                                                 class="fl-photo-img wp-image-987665 size-full vamtam-lazyload-noparent"
-                                                                                src="../wp-content/uploads/2017/07/bull-logistics-02.jpg"
+                                                                                src="{{ asset('logon.png') }}"
                                                                                 alt="ZGF logistics 02"
                                                                                 itemprop="image" height="189"
                                                                                 width="226" data-link-type="url"
@@ -432,10 +432,12 @@
                                                                     <div class="fl-photo-content fl-photo-img-svg">
                                                                         <img loading="lazy"
                                                                             class="fl-photo-img wp-image-15170 size-thumbnail vamtam-lazyload-noparent"
-                                                                            src="../wp-content/uploads/2018/01/element-support.svg"
+                                                                            src="{{ asset('element-support.svg') }}"
                                                                             alt="element-support" itemprop="image"
                                                                             height="78" width="62"
                                                                             title="element-support" />
+                                                                            
+                                                                            
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -477,7 +479,9 @@
                                                                     <div class="fl-photo-content fl-photo-img-svg">
                                                                         <img loading="lazy"
                                                                             class="fl-photo-img wp-image-15174 size-thumbnail vamtam-lazyload-noparent"
-                                                                            src="../wp-content/uploads/2018/01/element-map.svg"
+                                                                            
+                                                                            src="{{ asset('element-map.svg') }}"
+                                                                            
                                                                             alt="element-map" itemprop="image"
                                                                             height="60" width="99"
                                                                             title="element-map" />
@@ -579,38 +583,7 @@
                                             <div class="fl-module fl-module-vamtam-icon-group fl-node-59a1c188356c5"
                                                 data-node="59a1c188356c5">
                                                 <div class="fl-module-content fl-node-content">
-                                                    <div class="fl-icon-group textleft">
-                                                        <span class="fl-icon">
-                                                            <a href="#" target="_blank">
-                                                                <i class="icon icon-b theme "
-                                                                    data-icon="&#59717;"></i>
-                                                            </a> </span>
-
-                                                        <span class="fl-icon">
-                                                            <a href="#" target="_blank">
-                                                                <i class="icon icon-b theme "
-                                                                    data-icon="&#59716;"></i>
-                                                            </a> </span>
-
-                                                        <span class="fl-icon">
-                                                            <a href="#" target="_blank">
-                                                                <i class="icon icon-b theme "
-                                                                    data-icon="&#58904;"></i>
-                                                            </a> </span>
-
-                                                        <span class="fl-icon">
-                                                            <a href="#" target="_blank">
-                                                                <i class="icon icon-b theme "
-                                                                    data-icon="&#59713;"></i>
-                                                            </a> </span>
-
-                                                        <span class="fl-icon">
-                                                            <a href="#" target="_blank">
-                                                                <i class="icon icon-b theme "
-                                                                    data-icon="&#59723;"></i>
-                                                            </a> </span>
-
-                                                    </div>
+                                                    
                                                 </div>
                                             </div>
                                         </div>
