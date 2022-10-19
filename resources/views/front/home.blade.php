@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Track &#8211; Bull Logistics</title>
+    <title>Track &#8211; ZGF Freight Services</title>
     {{-- <link rel="stylesheet" href="styling.css"/> --}}
     <link rel="stylesheet" type="text/css" href="{{ asset('stake/styling.css') }}">
 
@@ -219,13 +219,13 @@
                                             data-hover-intent-timeout="300" data-hover-intent-interval="100">
                                             <li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-align-bottom-left mega-menu-flyout mega-menu-item-987677'
                                                 id='mega-menu-item-987677'><a class="mega-menu-link"
-                                                    href="../company/index.html" tabindex="0">About</a></li>
+                                                    href="https://zgffreightservices.com/company/" tabindex="0">About</a></li>
                                             <li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-align-bottom-left mega-menu-flyout mega-menu-item-987674'
                                                 id='mega-menu-item-987674'><a class="mega-menu-link"
-                                                    href="../contact/index.html" tabindex="0">Contacts</a></li>
+                                                    href="https://zgffreightservices.com/contact/" tabindex="0">Contacts</a></li>
                                             <li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-current-menu-item mega-page_item mega-page-item-15186 mega-current_page_item mega-align-bottom-left mega-menu-flyout mega-menu-item-987678'
                                                 id='mega-menu-item-987678'><a class="mega-menu-link"
-                                                    href="index.html" tabindex="0">Track</a></li>
+                                                    href="#" tabindex="0">Track</a></li>
                                         </ul>
                                         <div class="mobile-top-bar"></div>
                                     </div>
@@ -396,14 +396,14 @@
                                                                     <div class="fl-photo-content fl-photo-img-jpeg">
                                                                         <a href="https://morz.vamtam.com/"
                                                                             target="_self" itemprop="url"
-                                                                            title="bull logistics 02">
+                                                                            title="ZGF logistics 02">
                                                                             <img loading="lazy"
                                                                                 class="fl-photo-img wp-image-987665 size-full vamtam-lazyload-noparent"
                                                                                 src="../wp-content/uploads/2017/07/bull-logistics-02.jpg"
-                                                                                alt="bull logistics 02"
+                                                                                alt="ZGF logistics 02"
                                                                                 itemprop="image" height="189"
                                                                                 width="226" data-link-type="url"
-                                                                                title="bull logistics 02"
+                                                                                title="ZGF logistics 02"
                                                                                 sizes="(max-width: 768px) 100vw, (min-width: 1400px) 476px,34vw" />
                                                                         </a>
                                                                     </div>
@@ -672,7 +672,7 @@
                                                             data-node="597d02a1d62a5">
                                                             <div class="fl-module-content fl-node-content">
                                                                 <div class="fl-rich-text">
-                                                                    <p><strong>© 2022 Bull Logistics <span
+                                                                    <p><strong>© 2022 ZGF Freight Services <span
                                                                                 style="color: #d8d8d8;">/</span> All
                                                                             rights reserved</strong></p>
                                                                 </div>
