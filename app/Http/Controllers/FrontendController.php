@@ -30,9 +30,14 @@ class FrontendController extends Controller
             'cargo_tracking_number' => 'required',
          ]);
         
-         $info = Order::where('order_num', $request->cargo_tracking_number)->firstOrFail();
-         
-       return view("$this->theme.home", compact('info'));
+         $info = Order::where('order_num', $request->cargo_tracking_number)->first();
+
+         if(is_null($info)) $info = [];
+        
+        return view("$this->theme.home", compact('info'));
+        
+
+        
     }
 
 
