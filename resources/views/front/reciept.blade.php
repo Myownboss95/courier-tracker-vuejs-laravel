@@ -1,34 +1,3 @@
-{{-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Order Reciept</title>
-    <style type="text/css">
-     </style>
-    <link rel="stylesheet" type="text/css" href="{{ asset('stake/bootstrap.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('stake/recieptstyle.css') }}">
-</head>
-
-<body>
-    <table class="table table-bordered table-light">
-        <tr>
-          <td class="t3">{{ $info['pickup_date'] }}</td>
-          <td class="t3">{{ $info['pickup_date'] }}</td>
-          <td class="">{{ $info['pickup_date'] }}</td>
-          <td>
-
-          </td>
-          
-        </tr>
-      
-      </table>
-</body>
-
-</html> --}}
-
 <!DOCTYPE html>
 <html>
     <head>

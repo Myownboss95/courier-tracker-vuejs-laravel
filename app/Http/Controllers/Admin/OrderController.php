@@ -115,7 +115,7 @@ class OrderController extends Controller
         
         $info = Order::where('order_num', $id)->firstOrFail();
         //  dd($info);
-        $pdf = Pdf::loadView('front.reciept', compact('info'))->setPaper('a4', 'landscape');
+        $pdf = Pdf::loadView('front.reciept', compact('info'))->setPaper('letter', 'landscape');
         return $pdf->download();
     //    return view("front.reciept", compact('info'));
     }
