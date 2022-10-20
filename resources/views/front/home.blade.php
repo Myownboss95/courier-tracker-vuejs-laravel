@@ -317,7 +317,7 @@
 															@if ($info['order_status']=='not_collected')
 																Not Collected
 															@elseif ($info['order_status']=='in_transit')
-																In Transit
+																In Transit, Country: {{ $info['in_transit_country'] }}
 															@elseif ($info['order_status']=='pending')
 																Pending
 															@else

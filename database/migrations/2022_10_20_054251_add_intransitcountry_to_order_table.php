@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::table('orders', function (Blueprint $table) {
             //
-            $table->string('origin')->nullable(); 
-            $table->string('carrier_ref_no')->nullable();
+            $table->string('in_transit_country')->nullable();
+
         });
     }
 
@@ -29,8 +29,7 @@ return new class extends Migration
     {
         Schema::table('orders', function (Blueprint $table) {
             //
-            $table->dropColumn('origin');
-            $table->dropColumn('carrier_ref_no');
+            $table->dropColumn('in_transit_country');
         });
     }
 };

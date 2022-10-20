@@ -24,6 +24,16 @@
             class="col-md-6 col-sm-12" 
             :options="{ '':'Select Options', 'delivered': 'Delivered', 'in_transit': 'In Transit', 'pending':'Pending', 'not_collected': 'Not Collected' }"
           />
+          <div v-if="form.order_status === 'in_transit'">
+            <FormSelect class="offset-md-6 col-md-6 col-sm-12" 
+            name="in_transit_country"
+            placeholder="In Transit Location"
+            label="In Transit Location"
+            v-model="form.in_transit_country"
+            :options="countries" 
+          />
+          </div>
+          <div v-else></div>
           <FormGroup
             name="order_notes"
             placeholder="Comment"
@@ -238,6 +248,7 @@ const countries = computed(() => props.countries);
   const form = useForm({
     order_name: '',
     order_status: '',
+    in_transit_country: '',
     order_notes: '',
     pickup_time:'',
     pickup_date: '',
@@ -264,6 +275,7 @@ const countries = computed(() => props.countries);
     origin :''
   });
   const createOrder = (_) => {
+    // console.log(form.data())
     form.post(route('admin.orders.store'));
   };
 </script>

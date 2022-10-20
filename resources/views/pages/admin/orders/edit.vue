@@ -32,6 +32,16 @@
             class="col-md-6 col-sm-12" 
             :options="{ '':'Select Options', 'delivered': 'Delivered', 'in_transit': 'In Transit', 'pending':'Pending', 'not_collected': 'Not Collected' }"
           />
+          <div v-if="form.order_status === 'in_transit'">
+            <FormSelect class="offset-md-6 col-md-6 col-sm-12" 
+            name="in_transit_country"
+            placeholder="In Transit Location"
+            label="In Transit Location"
+            v-model="form.in_transit_country"
+            :options="countries" 
+          />
+          </div>
+          <div v-else></div>
           <FormGroup
             name="order_notes"
             placeholder="Comment"
@@ -267,6 +277,7 @@ const props = defineProps({
     mode: props.order?.mode ||'',
     carrier_ref_no: props.order?.carrier_ref_no ||'',
     origin :props.order?.origin ||'',
+    in_transit_country:props.order?.in_transit_country ||'',
     
   });
 

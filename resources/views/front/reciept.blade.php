@@ -41,15 +41,15 @@
     <style type="text/css">
     body{
         font-family: Montserrat;
-        font-size:14px;
-        padding: 10px;
+        font-size:13px;
+        padding: 5px;
     }
     h5{
         font-size: 14px;
     }
          td, th {
                 border: 1px solid;
-                padding:5px;
+                padding:3px;
                 }
 
 .inner{
@@ -69,9 +69,9 @@ table {
 	<table style=" margin-bottom:60px;">
 		<tr>
 			<td style="text-align: center">
-                <img width="300" src="{{ asset('logon.png') }}" class="logo"></td>
+                <img width="200" src="{{ asset('logon.png') }}" class="logo"></td>
             <td style="text-align: center">
-                <img width="300" src="{{ asset('barcode.png') }}" class="logo">
+                <img width="200" src="{{ asset('barcode.png') }}" class="logo">
                 <h5 style="letter-spacing: 11px; margin-top: -2px">{{ $info['order_num'] }}</h5>
                 <p style="margin-top:-15px">Accounts Copy</p>
             </td>
@@ -221,9 +221,9 @@ table {
     <table style=" margin-bottom:60px;">
 		<tr>
 			<td style="text-align: center">
-                <img width="300" src="{{ asset('logon.png') }}" class="logo"></td>
+                <img width="200" src="{{ asset('logon.png') }}" class="logo"></td>
             <td style="text-align: center">
-                <img width="300" src="{{ asset('barcode.png') }}" class="logo">
+                <img width="200" src="{{ asset('barcode.png') }}" class="logo">
                 <h5 style="letter-spacing: 11px; margin-top: -2px">{{ $info['order_num'] }}</h5>
                 <p style="margin-top:-15px">Consignee Copy</p>
             </td>
