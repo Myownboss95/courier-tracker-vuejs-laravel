@@ -163,7 +163,7 @@
                         <div class="first-row-left">
                             <div class="logo-wrapper">
                                 <div class="logo-tagline">
-                                    <a href="../index.html" title=" Logistics" class="logo "
+                                    <a href="https://zgffreightservices.com" title=" Logistics" class="logo "
                                         style="min-width:56.5px">
                                         <img width="100" src="{{ asset('logon.png') }}" class="logo">
                                     </a>
