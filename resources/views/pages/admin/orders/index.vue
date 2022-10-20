@@ -33,7 +33,7 @@
                                 <i class="fa fa-check"></i> Delivered 
                             </div> 
                             <div v-else-if="order.order_status === 'in_transit'">
-                                <i class="fa fa-circle-o-notch"></i> In Transit
+                                <i class="fa fa-car"></i> In Transit
                             </div>
                             <div v-else-if="order.order_status === 'pending'">
                                 <i class="fa fa-ellipsis-h"></i> Pending
@@ -52,7 +52,7 @@
                                 <i class="fa fa-edit"></i>
                             </InertiaLink>
                             <a :href="route('admin.orders.reciept',order.order_num)" target="_blank" class="btn btn-secondary mx-1 btn-sm">
-                                <i class="fa fa-eye"></i> View Page
+                                <i class="fa fa-download"></i> Download Reciept
                             </a>
   
                             <InertiaLink method="delete" :href="route('admin.orders.destroy',order.id)" class="btn btn-outline-danger btn-sm mx-1" as="button">
