@@ -32,6 +32,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   background-color: #d5dae5;
+  height: auto;
 }
     </style>
 
