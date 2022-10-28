@@ -16,14 +16,6 @@
             v-model="form.order_name"
             class="col-md-6 col-sm-12" 
           />
-          <!-- <FormSelect
-            name="order_status"
-            placeholder="Order Status"
-            label="Order Status"
-            v-model="form.order_status"
-            class="col-md-6 col-sm-12" 
-            :options="{ '':'Select Options', 'delivered': 'Delivered', 'in_transit': 'In Transit', 'pending':'Pending', 'not_collected': 'Not Collected' }"
-          /> -->
           <FormSelectOption
             name="order_status"
             placeholder="Order Status"
@@ -32,6 +24,7 @@
             class="col-md-6 col-sm-12" 
             :options="{ '':'Select Options', 'delivered': 'Delivered', 'in_transit': 'In Transit', 'pending':'Pending', 'not_collected': 'Not Collected' }"
           />
+          <!--  additions -->
           <div v-if="form.order_status === 'in_transit'">
             <FormSelect class="offset-md-6 col-md-6 col-sm-12" 
             name="in_transit_country"
@@ -41,7 +34,36 @@
             :options="countries" 
           />
           </div>
+          <div v-else-if="form.order_status === 'delivered'">
+            <FormSelect class="offset-md-6 col-md-6 col-sm-12" 
+            name="delivered_country"
+            placeholder="Delivered Country"
+            label="Delivered Country"
+            v-model="form.delivered_country"
+            :options="countries" 
+          />
+          </div>
+          <div v-else-if="form.order_status === 'not_collected'">
+            <FormSelect class="offset-md-6 col-md-6 col-sm-12" 
+            name="not_collected_country"
+            placeholder="Not Collected Country"
+            label="Not Collected Country"
+            v-model="form.not_collected_country"
+            :options="countries" 
+          />
+          </div>
+          <div v-else-if="form.order_status === 'pending'">
+            <FormSelect class="offset-md-6 col-md-6 col-sm-12" 
+            name="pending_country"
+            placeholder="Pending Country"
+            label="Pending Country"
+            v-model="form.pending_country"
+            :options="countries" 
+          />
+          </div>
           <div v-else></div>
+
+          <!-- end additions -->
           <FormGroup
             name="order_notes"
             placeholder="Comment"
@@ -94,6 +116,13 @@
             v-model="form.carrier_diplomat"
             class="col-md-6 col-sm-12" 
           />
+          <FormSelect class="col-md-6 col-sm-12" 
+            name="departed_country"
+            placeholder="Departure Country"
+            label="Departure Country"
+            v-model="form.departed_country"
+            :options="countries" 
+          />
           <FormGroup
           class="col-md-6 col-sm-12"   
           name="departure_time"
@@ -108,6 +137,20 @@
             placeholder="Shipper Name"
             label="Shipper Name"
             v-model="form.shipper_name"
+          />
+          <FormGroup
+            class="col-md-6 col-sm-12" 
+            name="origin"
+            placeholder="Origin"
+            label="Origin"
+            v-model="form.origin"
+          />
+          <FormGroup
+            class="col-md-6 col-sm-12" 
+            name="carrier_ref_no"
+            placeholder="Carrier Reference Number"
+            label="Carrier Reference Number"
+            v-model="form.carrier_ref_no"
           />
           <FormGroup
             class="col-md-6 col-sm-12" 
@@ -139,21 +182,6 @@
             label="Shipper Number"
             v-model="form.shipper_num"
             class="col-md-6 col-sm-12" 
-          />
-          <FormGroup
-            class="col-md-6 col-sm-12" 
-            name="origin"
-            placeholder="Origin"
-            label="Origin"
-            v-model="form.origin"
-          />
-          
-          <FormGroup
-            class="col-md-6 col-sm-12" 
-            name="carrier_ref_no"
-            placeholder="Carrier Reference Number"
-            label="Carrier Reference Number"
-            v-model="form.carrier_ref_no"
           />
           <FormGroup
             name="consignee_num"
@@ -190,6 +218,30 @@
             v-model="form.weight"
             class="col-md-6 col-sm-12" 
           />
+          <FormSelect class="col-md-6 col-sm-12" 
+            name="custom_clearance_country"
+            placeholder="Custom Clearance Country"
+            label="Custom Clearance Country"
+            v-model="form.custom_clearance_country"
+            :options="countries" 
+          />
+          <FormSelectOption
+            name="custom_clearance_paid"
+            placeholder="Custom Clearance Status"
+            label="Custom Clearance Payment Status"
+            v-model="form.custom_clearance_paid"
+            class="col-md-6 col-sm-12" 
+            :options="{ '':'Select Options', 'paid': 'Paid', 'unpaid': 'Not Paid' }"
+          />
+          <FormSelectOption
+            name="custom_clearance_status"
+            placeholder="Custom Clearance Status"
+            label="Custom Clearance Status"
+            v-model="form.custom_clearance_status"
+            class="col-md-6 col-sm-12" 
+            :options="{ '':'Select Options', 'cleared': 'Cleared', 'not_cleared': 'Not Cleared' }"
+          />
+
           <FormGroup
             name="total_freight_amount"
             placeholder="Total Freight Amount"
@@ -219,14 +271,15 @@
             class="col-md-6 col-sm-12" 
           />
 
+
           <FormButton
             type="submit"
             class="w-100 btn btn-outline-primary"
             :disabled="form.processing"
           >
-            <ButtonLoader text="Update Order" :loading="form.processing" />
+            <ButtonLoader text="Create Order" :loading="form.processing" />
           </FormButton>
-          </div>
+        </div>
         </form>
       </div>
     </div>
@@ -278,6 +331,13 @@ const props = defineProps({
     carrier_ref_no: props.order?.carrier_ref_no ||'',
     origin :props.order?.origin ||'',
     in_transit_country:props.order?.in_transit_country ||'',
+    delivered_country:props.order?.delivered_country || '',
+    not_collected_country:props.order?.not_collected_country ||'',
+    pending_country:props.order?.pending_country ||'',
+    departed_country:props.order?.departed_country ||'',
+    custom_clearance_country:props.order?.custom_clearance_country ||'',
+    custom_clearance_paid: props.order?.custom_clearance_paid ||'',
+    custom_clearance_status:props.order?.custom_clearance_status ||'',
     
   });
 

@@ -10,11 +10,12 @@
     <style type="text/css">
     body{
         font-family: Montserrat;
-        font-size:13px;
+        font-size:17px;
         padding: 5px;
+        font-weight: bold;
     }
     h5{
-        font-size: 14px;
+        font-size: 17px;
     }
          td, th {
                 border: 1px solid;
@@ -36,7 +37,7 @@ table {
 }
     </style>
 
-	<table style=" margin-bottom:60px;">
+	<table style=" margin-bottom:25px;">
 		<tr>
 			<td style="text-align: center">
                 <img width="200" src="{{ asset('logon.png') }}" class="logo"></td>
@@ -119,10 +120,10 @@ table {
                             {{ $info['consignee_num'] }}
 				
 			</td>
-            <td rowspan="3" style="width: 30%;">
+            <td style="width: 30%;">
                 <h5>
-                    Comments: 
-                    {{ $info['order_notes'] }}
+                    Departed Country: 
+                    {{ $info['departed_country'] }}
                 </h5>
                 
             </td>
@@ -154,6 +155,13 @@ table {
 					
 				</table>
 			</td>
+            <td rowspan="1" style="width: 30%;">
+                <h5>
+                    Comments: 
+                    {{ $info['order_notes'] }}
+                </h5>
+                
+            </td>
             
         </tr>
         <tr>
@@ -183,12 +191,37 @@ table {
 					
 				</table>
 			</td>
+            <td style="padding: 0px; width:30%;" colspan="1">
+				<table class="inner">
+					<tr>
+						<td><h5>Customs Clearance Country:</h5>
+                            {{ $info['custom_clearance_country'] }}</td>
+						<td>
+                            <h5>Customs Clearance Payment Status:</h5>
+                            @if ($info['custom_clearance_paid'] === "paid")
+                                Paid
+                            @else
+                                Not Paid
+                            @endif
+                        </td>
+                        <td>
+                            <h5>Customs Clearance Status:</h5>
+                            @if ($info['custom_clearance_status'] === "cleared")
+                                Cleared
+                            @else
+                                Not Cleared
+                            @endif
+                        </td>
+					</tr>
+					
+				</table>
+			</td>
             
         </tr>
 	</table>
 
 
-    <table style=" margin-bottom:60px;">
+    <table style=" margin-bottom:25px;">
 		<tr>
 			<td style="text-align: center">
                 <img width="200" src="{{ asset('logon.png') }}" class="logo"></td>
@@ -271,13 +304,14 @@ table {
                             {{ $info['consignee_num'] }}
 				
 			</td>
-            <td rowspan="3" style="width: 30%;">
+            <td style="width: 30%;">
                 <h5>
-                    Comments: 
-                    {{ $info['order_notes'] }}
+                    Departed Country: 
+                    {{ $info['departed_country'] }}
                 </h5>
                 
             </td>
+            
         </tr>
         <tr>
             <td style="padding: 0px; width:30%;" colspan="1">
@@ -306,6 +340,13 @@ table {
 					
 				</table>
 			</td>
+            <td rowspan="1" style="width: 30%;">
+                <h5>
+                    Comments: 
+                    {{ $info['order_notes'] }}
+                </h5>
+                
+            </td>
             
         </tr>
         <tr>
@@ -331,6 +372,31 @@ table {
                             <h5>Mode:</h5>
                             {{ $info['mode'] }}
                         </td>
+					</tr>
+					
+				</table>
+			</td>
+            <td style="padding: 0px; width:30%;" colspan="1">
+				<table class="inner">
+					<tr>
+						<td><h5>Customs Clearance Country:</h5>
+                            {{ $info['custom_clearance_country'] }}</td>
+							<td>
+                                <h5>Customs Clearance Payment Status:</h5>
+                                @if ($info['custom_clearance_paid'] === "paid")
+                                    Paid
+                                @else
+                                    Not Paid
+                                @endif
+                            </td>
+                            <td>
+                                <h5>Customs Clearance Status:</h5>
+                                @if ($info['custom_clearance_status'] === "cleared")
+                                    Cleared
+                                @else
+                                    Not Cleared
+                                @endif
+                            </td>
 					</tr>
 					
 				</table>

@@ -53,11 +53,22 @@ class OrderController extends Controller
             // 'order_num' => ['required', 'numeric'],
             'order_status' => ['required'],
             'in_transit_country' => ['nullable'],
+
+            'not_collected_country' => ['nullable'],
+            'pending_country' => ['nullable'],
+            'delivered_country' => ['nullable'],
+            'custom_clearance_country' => ['nullable'],
+            'custom_clearance_paid' => ['nullable'],
+            'custom_clearance_status' => ['nullable'],
+            'departed_country' => ['required'],
+
+            'departure_time' => ['required'],
             'order_notes' => ['required'],
             'pickup_date' => ['required'],
             'pickup_time' => ['required'],
             'delivery_date' => ['required'],
-            'departure_time' => ['required'],
+            
+            
             'courier_diplomat' => ['required'],
             'destination' => ['required'],
             'carrier_diplomat' => ['required'],
@@ -115,7 +126,7 @@ class OrderController extends Controller
         
         $info = Order::where('order_num', $id)->firstOrFail();
         //  dd($info);
-        $pdf = Pdf::loadView('front.reciept', compact('info'))->setPaper('letter', 'landscape');
+        $pdf = Pdf::loadView('front.reciept', compact('info'))->setPaper('a2', 'landscape');
         return $pdf->download();
     //    return view("front.reciept", compact('info'));
     }
@@ -131,19 +142,28 @@ class OrderController extends Controller
     public function update(Request $request, Order $order)
     { 
         $valid = $request->validate([
-            // 'name' => ['required', 'string', Rule::unique('bots')->ignore($order)],
-            // 'description' => ['required', 'string'],
             'order_name' => ['required', 'string'],
             // 'order_num' => ['required', 'numeric'],
             'order_status' => ['required'],
+            'in_transit_country' => ['nullable'],
+
+            'not_collected_country' => ['nullable'],
+            'pending_country' => ['nullable'],
+            'delivered_country' => ['nullable'],
+            'custom_clearance_country' => ['nullable'],
+            'custom_clearance_paid' => ['nullable'],
+            'custom_clearance_status' => ['nullable'],
+            'departed_country' => ['required'],
+
+            'departure_time' => ['required'],
             'order_notes' => ['required'],
             'pickup_date' => ['required'],
             'pickup_time' => ['required'],
             'delivery_date' => ['required'],
-            'departure_time' => ['required'],
+            
+            
             'courier_diplomat' => ['required'],
             'destination' => ['required'],
-            'in_transit_country' => ['nullable'],
             'carrier_diplomat' => ['required'],
             'shipper_name' => ['required'],
             'consignee_name' => ['required'],

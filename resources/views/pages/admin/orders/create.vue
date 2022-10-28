@@ -24,6 +24,7 @@
             class="col-md-6 col-sm-12" 
             :options="{ '':'Select Options', 'delivered': 'Delivered', 'in_transit': 'In Transit', 'pending':'Pending', 'not_collected': 'Not Collected' }"
           />
+          <!--  additions -->
           <div v-if="form.order_status === 'in_transit'">
             <FormSelect class="offset-md-6 col-md-6 col-sm-12" 
             name="in_transit_country"
@@ -33,7 +34,36 @@
             :options="countries" 
           />
           </div>
+          <div v-else-if="form.order_status === 'delivered'">
+            <FormSelect class="offset-md-6 col-md-6 col-sm-12" 
+            name="delivered_country"
+            placeholder="Delivered Country"
+            label="Delivered Country"
+            v-model="form.delivered_country"
+            :options="countries" 
+          />
+          </div>
+          <div v-else-if="form.order_status === 'not_collected'">
+            <FormSelect class="offset-md-6 col-md-6 col-sm-12" 
+            name="not_collected_country"
+            placeholder="Not Collected Country"
+            label="Not Collected Country"
+            v-model="form.not_collected_country"
+            :options="countries" 
+          />
+          </div>
+          <div v-else-if="form.order_status === 'pending'">
+            <FormSelect class="offset-md-6 col-md-6 col-sm-12" 
+            name="pending_country"
+            placeholder="Pending Country"
+            label="Pending Country"
+            v-model="form.pending_country"
+            :options="countries" 
+          />
+          </div>
           <div v-else></div>
+
+          <!-- end additions -->
           <FormGroup
             name="order_notes"
             placeholder="Comment"
@@ -85,6 +115,13 @@
             label="Carrier Diplomat"
             v-model="form.carrier_diplomat"
             class="col-md-6 col-sm-12" 
+          />
+          <FormSelect class="col-md-6 col-sm-12" 
+            name="departed_country"
+            placeholder="Departure Country"
+            label="Departure Country"
+            v-model="form.departed_country"
+            :options="countries" 
           />
           <FormGroup
           class="col-md-6 col-sm-12"   
@@ -181,6 +218,30 @@
             v-model="form.weight"
             class="col-md-6 col-sm-12" 
           />
+          <FormSelect class="col-md-6 col-sm-12" 
+            name="custom_clearance_country"
+            placeholder="Custom Clearance Country"
+            label="Custom Clearance Country"
+            v-model="form.custom_clearance_country"
+            :options="countries" 
+          />
+          <FormSelectOption
+            name="custom_clearance_paid"
+            placeholder="Custom Clearance Status"
+            label="Custom Clearance Payment Status"
+            v-model="form.custom_clearance_paid"
+            class="col-md-6 col-sm-12" 
+            :options="{ '':'Select Options', 'paid': 'Paid', 'unpaid': 'Not Paid' }"
+          />
+          <FormSelectOption
+            name="custom_clearance_status"
+            placeholder="Custom Clearance Status"
+            label="Custom Clearance Status"
+            v-model="form.custom_clearance_status"
+            class="col-md-6 col-sm-12" 
+            :options="{ '':'Select Options', 'cleared': 'Cleared', 'not_cleared': 'Not Cleared' }"
+          />
+
           <FormGroup
             name="total_freight_amount"
             placeholder="Total Freight Amount"
@@ -249,6 +310,10 @@ const countries = computed(() => props.countries);
     order_name: '',
     order_status: '',
     in_transit_country: '',
+    delivered_country: '',
+    not_collected_country:'',
+    pending_country:'',
+    departed_country:'',
     order_notes: '',
     pickup_time:'',
     pickup_date: '',
@@ -267,6 +332,9 @@ const countries = computed(() => props.countries);
     packages: '',
     product: '',
     weight: '',
+    custom_clearance_country:'',
+    custom_clearance_paid: '',
+    custom_clearance_status:'',
     total_freight_amount: '',
     quantity: '',
     payment_mode: '',
